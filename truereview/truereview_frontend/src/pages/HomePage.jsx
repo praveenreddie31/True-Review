@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api';
+import api, { BASE_URL } from '../api';
 import { Star, ThumbsUp, MapPin, Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -115,7 +115,7 @@ const HomePage = () => {
                 <div className="flex gap-4 mb-6">
                   {review.image && (
                     <div className="relative w-40 h-40 rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
-                      <img src={`http://localhost:8000${review.image}`} alt="Proof" className="object-cover w-full h-full group-hover:scale-105 transition duration-500" />
+                      <img src={`${BASE_URL}${review.image}`} alt="Proof" className="object-cover w-full h-full group-hover:scale-105 transition duration-500" />
                       <div className="absolute bottom-2 right-2 bg-black/60 text-white p-1.5 rounded-lg backdrop-blur-md"><ImageIcon size={16} /></div>
                     </div>
                   )}
